@@ -66,6 +66,8 @@ System.Collections.Generic에는 제네릭 컬렉션을 정의하는 클래스�
             int v = 12345678;
             double w = 12.345678;
 
+
+/*-------------------수치 서식 문자열-----------------*/
             Console.WriteLine("통화 (C) -> {0:C}", v);
             Console.WriteLine("10진법 (D) -> {0:D}", v);
             Console.WriteLine("지수 표기법 (E) -> {0:E}", w);
@@ -84,6 +86,52 @@ System.Collections.Generic에는 제네릭 컬렉션을 정의하는 클래스�
             16진법 (X) -> BC614E
             백분율 (P) -> 1,234.57%
             */
+
+
+            /*-------------------사용자 지정 수치 서식 문자열-----------------*/
+            int x = 1234;
+            double y = 12.345678;
+            Console.WriteLine("0 자리 표시 (0) . . . .: {0:00000}", x);
+            Console.WriteLine("10진수 자리 표시 (#) . : {0:#####}", x);
+            Console.WriteLine("소수점 (.) . . . . . . : {0:0.00000}", y);
+            Console.WriteLine("천 단위 자릿수 표시 (,): {0:0,0}", x);
+            Console.WriteLine("백분율 자리 표시 (%) . : {0:0%}", y);
+            Console.WriteLine("지수 표기법 (e) . . . .: {0:0.000e+0}", y);
+
+            int z = 12345;
+
+
+            Console.WriteLine("|{0,15}|", z);
+            Console.WriteLine("|{0,-15}|", z);
+            /* 15앞에 -를 붙이니 왼쪽부터 출력되게 나옴. 아무것도 붙이지 않으면 오른쪽부터 출력됨 ㄴ*/
+            Console.WriteLine("|{0,15:N0}|", z);
+            Console.WriteLine("|{0,-15:N0}|", z);
+            /* 숫자를 알아서 , 찍어주던 N과 너비지정을 같이 설정한 것. 0번째 위치한 z변수를 15의 크기만큼 N의 수치서식문자열을
+               사용하여오른쪽/왼쪽 부터 정렬하여라. */
+
+
+
+            /*-------------------형식 변환-----------------*/
+
+            int aa = 500;
+            float bb = aa; // 정수 -> 실수는 데이터의 손실이 없으므로 암시적 변환이 이루어지기때문에 별도 구문 필요 X
+
+            Console.WriteLine("aa={0}, bb={1}", aa, bb);
+
+            double cc = 123.45;
+            int dd = (int)cc; // 실수 -> 정수는 변환과정에서 소수점 이하가 모두 버려지는 데이터 손실이 일어나기 때문에 손실여부와 관계없이
+                              // 형식변환을 하고 싶은 경우에는 명시적 변환을 사욯아여 바꿔줘야함. (int)cc 같이. 그러나 이렇게 하면 데이터 손실 일어남
+
+            Console.WriteLine("cc={0}, dd={1}", cc, dd);
+
+
+            int ee = 500;
+            float ff = 60.44f;
+            string gg = a.ToString();
+            string hh = b.ToString();
+
+            Console.WriteLine("ee={0}, ff={1}, gg={2}, hh={3}", ee, ff, gg, hh);
+
         }
     }
 
