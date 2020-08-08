@@ -132,6 +132,44 @@ System.Collections.Generic에는 제네릭 컬렉션을 정의하는 클래스�
 
             Console.WriteLine("ee={0}, ff={1}, gg={2}, hh={3}", ee, ff, gg, hh);
 
+            /*-------------------상수-----------------*/
+
+            const double wow = 3.24;
+            const int age = 29;
+            /* 상수값을 변경하려고 하면 오류가뜸 */
+
+
+            /*-------------------조건문-----------------*/
+            int su1 = 123;
+            int su2 = 100;
+            if(su1 < su2)
+            {
+                Console.WriteLine("안녕하시요");
+            } else
+            {
+                Console.WriteLine("안녕히가시요");
+            }
+
+            switch(su2)
+            {
+                case 100: Console.WriteLine("100이요");
+                    break;
+                case 101: Console.WriteLine("하아암");
+                    break;
+            }
+
+            /* 결론 : 자바와 조건문, 반복문이 똑같다! 다만 반복문에서 출력만 좀 신경쓰기!*/
+
+
+            for (int iii = 1; iii < 10; iii++)
+            {
+                Console.WriteLine("구구단 {0}단", iii);
+                for (int jjj = 1; jjj < 10; jjj++)
+                {
+                    Console.WriteLine("{0} X {1} = {2}", iii, jjj, iii * jjj);
+                }
+            }
+
         }
     }
 
